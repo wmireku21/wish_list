@@ -19,7 +19,7 @@ class ShoppingList extends Component {
 
         return (
             <Container>
-                <Button
+                {/*<Button
                     color="dark"
                     style={{marginBottom: '2em'}}
                     onClick={() => {
@@ -31,7 +31,7 @@ class ShoppingList extends Component {
                         }
                     }}>
                     Add Item
-                </Button>
+                </Button>*/}
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
                         {items.map(({id, name}) => (
