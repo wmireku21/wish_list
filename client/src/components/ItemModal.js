@@ -9,7 +9,8 @@ import {
     Label, 
     Input
 } from 'reactstrap';
-import {v1 as uuid} from 'uuid'; 
+import { connect } from 'react-redux';
+import { addItem } from '../actions/itemActions';
 
 
 
@@ -33,9 +34,10 @@ class ItemModal extends Component {
         e.preventDefault();
 
         const newItem = {
-            id: uuid(),
             name: this.state.name
         }
+
+        this.props.addItem(newItem);
 
         this.toggle();
     }
@@ -81,4 +83,8 @@ class ItemModal extends Component {
     }
 }
 
-export default ItemModal;
+const mapStateToProps = state => ({
+    item: state.item
+})
+
+export default connect(mapStateToProps, {addItem})(ItemModal);
